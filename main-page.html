@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bondeth.com</title>
+    <!--Material Icon Link-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500|Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp">
+    <!--CSS Style-->
+    <link rel="stylesheet" href="main-page-style.css">
+    <!--Script JS-->
+    <script src="etec-script.js"></script>
+    <!--jQuery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <!--Navbar Start-->
+    <div class="nav-bar">
+    </div>
+    <!--Navbar End-->
+    
+    <!--Body Start-->
+    <div class="main-body">
+        <!--Header Start-->
+        <div class="header">
+            Build your information tecnology skill with <b>Bondeth</b>. And Prepared yourseft for get high paid job as a Developer.
+        </div>
+        <!--Header End-->
+        <!--Feather Start-->
+        <div class="feather">
+            <div class="feather-left feather-context">
+                <h2>WEB DEVELOPMENT CORUSE</h2>
+                <p>Start to build your own website</p>
+                <div class="feather-left-button">Enroll Now</div>
+            </div>
+            <div class="feather-right">
+                <img src="Images/poster1_image.png" alt="">
+            </div>
+        </div>
+        <div class="feather">
+            <div class="feather-right">
+                <img src="Images/poster2_image.png" alt="">
+            </div>
+            <div class="feather-left feather-context">
+                <h2>NATIVE IOS DEVELOPMENT</h2>
+                <p>Beginner to Advanced with Swift Language</p>
+                <div class="feather-left-button">Enroll Now</div>
+            </div>
+        </div>
+        <div class="feather">
+            <div class="feather-left feather-context">
+                <h2>NATIVE ANDROID DEVELOPMENT</h2>
+                <p>Learn how to make the android application</p>
+                <div class="feather-left-button">Enroll Now</div>
+            </div>
+            <div class="feather-right">
+                <img src="Images/poster3_image.png" alt="">
+            </div>
+        </div>
+        <div class="feather">
+            <div class="feather-right">
+                <img src="Images/poster4_image.png" alt="">
+            </div>
+            <div class="feather-left feather-context">
+                <h2>ORACLE DATABASE CORUSE</h2>
+                <p>Learn how to manage database</p>
+                <div class="feather-left-button">Enroll Now</div>
+            </div>
+        </div>
+        <!--Feather End-->
+        <div class="content-box">
+            *Terms, taxes and other fees may apply. Fees subject to change. Menu limited. Restricted delivery area. Available in participating locations only. Prices for Starbucks® items purchased through Uber Eats may be higher than posted in stores or as marked. See the Uber Eats app for details. Limited time offer. May not be combined with other offers, discounts or promotions.
+        </div>
+        <div class="content-box">
+            **According to the USDA, 1.2 pounds of food is the equivalent to 1 meal. Nearly 34 million meals donated to Feeding America and other hunger relief organizations.
+        </div>
+        <!--Menu Start-->
+        <div class="menu"></div>
+        <!--Menu End-->
+        <div class="footer"></div>
+    </div>
+    <!--Body End-->
+</body>
+<script>
+    $(document).ready(function(){
+        var navLeftItems = [
+            "Menu",
+           "Courses",
+           "Lectures",
+        ];
+        var navRightItems = [
+            "Find Course",
+            "Sign in",
+            "Join Now"
+        ];
+        var logo = "<img src='Images/web-logo.png' height='60'>";
+        var navBar =  $('.nav-bar');
+        var body = $('body');
+
+        //Navigation Bar
+        getNav();
+        function getNav(){
+            var txt1 = "";
+            for(var x in navLeftItems){
+                if(x == 0){
+                    txt1 += "<div><a href='menu-page.html'>"+navLeftItems[x]+"<a></div>"
+                }else{
+                txt1 += "<div>"+navLeftItems[x]+"</div>";
+                }
+            }
+            navBar.append("<div class='left-nav'>"+txt1+"</div>");
+            navBar.find('.left-nav').prepend(logo);
+
+            var txt2 = "";
+            for(var k in navRightItems){
+                if(k == 0){
+                    txt2 += "<div class='right-nav-icon'>"+
+                             "<div class='material-icons'>place</div>"+
+                             "<div>"+navRightItems[k]+"</div>"+
+                           "</div>"
+                }else{
+                    txt2 += "<div class='right-nav-button'>"+navRightItems[k]+"</div>"
+                }
+            }
+            navBar.append("<div class='right-nav'>"+txt2+"</div>");
+            navBar.append("<div class='material-icons drawer-icon'>menu</div>")
+            $('.right-nav').find('.right-nav-button:eq(0)').css({
+                'background-color':'black',
+                'color':'white',
+            });
+            //Navigation Bar
+            
+            //Responsive-Drawer
+            var drawer = "<div class='drawer'>"+
+                "<div>Menu</div>"+
+                "<div>Courses</div>"+
+                "<div>Lectures</div>"+
+                "<hr>"+
+                "<div class='right-nav-icon'>"+
+                    "<div class='material-icons'>place</div>"+
+                    "<div>Find Course</div>"+    
+                "</div>"+
+                "<div class='right-nav-button' style='color:white; background:black'>Sign in</div>"+
+                "<div class='right-nav-button'>Join Now</div>"+
+                "</div>";
+
+            $('.main-body').append(drawer);
+            
+            $('.drawer-icon').click(function (){
+                $('.drawer').slideToggle('fast');
+            });
+            $(window).resize(function (){
+                var width = $(this).width();
+                if(width >= 780){
+                    $('.drawer').hide();
+                }
+            });
+            //Responsive-Drawer
+        }
+         //Menu
+        var menuItems = {
+            'Mobile App':['Java','Kotlin','Swift','Objective-C','Flutter','React Native'],
+            'Web Front End':['HTML','CSS','Bootstrap','Javascript','jQuery','React Js'],
+            'Web Back End':['PHP','Laravel','Python','Django','Java','Spring Boot'],
+            'Desktop App':['Microsoft C#','Java','Python','C++'],
+        };
+
+        getMenu();
+        function getMenu(){
+            var txt1 = "";
+            for(var x in menuItems){
+                var subMenuData = menuItems[x];
+                var txt2 = "";
+                for(var k in subMenuData){
+                    txt2 += "<li>"+subMenuData[k]+"</li>";
+                }
+                var subMenu = "<div class='sub-menu'>"+
+                              "<ul>"+txt2+"</ul>"+
+                              "</div>";
+                txt1 += "<li><div class='main-menu'>"+x+
+                        "<span class='material-icons main-menu-icon'>arrow_forward_ios</span></div>"+
+                        subMenu+
+                        "</li>";
+            }           
+            $('.menu').append('<ul>'+txt1+'</ul>');
+        }
+        getSubMenu();
+        function getSubMenu(){
+            $('.main-menu').click(function (){
+                var eThis = $(this);
+                eThis.parent('li').find('.sub-menu').slideToggle();
+            })
+        }
+
+        //Social Logo Footer
+        var iconItems = [
+            'Images/social_icon/facebook.png',
+            'Images/social_icon/youtube.png',
+            'Images/social_icon/instagram.png',
+            'Images/social_icon/twitter.png',
+            'Images/social_icon/tiktok.png',
+            'Images/social_icon/github.png'
+        ];
+
+        var contextItems = [
+            'Privacy Policy',
+            'Terms of Use',
+            'CA Supply Chain Art',
+            'Submit Your Idea',
+        ]
+
+        getSocialIcon();
+        function getSocialIcon(){
+            var txt1 = "";
+            for(var x in iconItems){
+                txt1 += "<img src="+iconItems[x]+">";
+            }
+            var item1 = "<div class='social-icon'>"+txt1+"</div>";
+            $('.main-body').find('.footer').append(item1);
+
+            var txt2 = "";
+            for(var k in contextItems){
+                txt2 += "<div>"+contextItems[k]+"</div>";
+            }   
+            var item2 = "<div class='context-footer'>"+txt2+"</div>";
+            $('.main-body').find('.footer').append(item2);
+        }
+    })
+</script>
+</html>

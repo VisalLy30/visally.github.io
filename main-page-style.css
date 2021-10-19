@@ -1,0 +1,237 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: Trebuchet MS, sans-serif;
+    box-sizing: border-box;
+}
+:root{
+    --lighColor: #ffe3fd;
+    --accentColor: #ffd1fc;
+}
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #bfbfbf;
+}
+.left-nav{
+    display: flex;
+    align-items: center;
+}
+.left-nav div{
+    padding: 10px
+}
+.right-nav{
+    display: flex;
+    align-items: center;
+}
+.right-nav-icon{
+    display: flex;
+    align-items: center;
+}
+.right-nav > div{
+    padding: 10px;
+}
+.right-nav-button{
+    border: 1px solid black;
+    border-radius: 30px;
+    margin: 0px 5px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+@media (min-width: 780px){
+    .drawer-icon{
+        display: none;
+    }
+    .main-body{
+        margin: 0px 100px;
+    }
+}
+@media (max-width: 780px){
+    .right-nav , .left-nav > div{
+        display: none;
+    }
+    .drawer-icon{
+        display: block;
+    }
+    .right-nav-button{
+        border-radius: 30px;
+        margin: 5px;
+        width: fit-content;
+        text-align: center;
+    }
+}
+.drawer{
+    float: right;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100vh;
+    width: 60%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: white;
+    padding: 0px 20px;
+    font-weight: bold;
+    display: none;
+}
+.drawer > div{
+    padding: 10px;
+    margin: 5px;
+}
+.header{
+    background-color: var(--accentColor);
+    text-align: center;
+    padding: 30px 20px;
+    margin: 10px 0px;
+}
+.main-body{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 0px;
+    right: 0px;
+}
+.feather{
+    display: flex;
+    height: 400px;
+}
+.feather > div{
+    width: 50%;
+    height: 100%;
+}
+.feather-left{background-color: var(--lighColor)}
+.feather-right{background-color: var(--accentColor)}
+.feather-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+}
+.feather-left-button{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 20px;    
+}
+.feather-left div{
+    margin: 10px 0px;
+}
+.feather-right > img{
+    height: 100%;
+    width: 100%;
+}
+@media (max-width: 765px){
+    .feather{
+        display: flex;
+        flex-direction: column-reverse;
+        height: 100%;
+        margin: 5px;
+    }
+    .feather > div{
+        width: 100%;
+    }
+    .feather-context{
+        padding: 10px;
+        font-size: 10px;
+    }
+    .content-box{
+        font-size: 13px;
+    }
+}
+.content-box{
+    padding: 20px;
+    text-align: center;
+    background-color: #eee;
+}
+.menu{
+    padding: 10px 25px;
+    margin: 10px 0px;
+    border-top: 1px solid #bfbfbf;
+    border-bottom: 1px solid #bfbfbf;
+}
+.menu ul{
+    list-style-type: none;
+}
+.menu > ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.main-menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+}
+.sub-menu{
+    font-size: 15px;
+}
+.sub-menu > ul > li{
+    margin: 10px 0px;
+}
+.main-menu-icon{
+    display: none;
+    font-size: 15px;
+}
+@media (max-width: 765px){
+    .menu > ul{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .main-menu{
+        padding: 10px;
+        cursor: pointer;
+        margin: 2px 0px;
+    }
+    .main-menu-icon{
+        display: block;
+    }
+    .menu{
+        padding: 5px;
+    }
+    .sub-menu{
+        display: none;
+        padding: 10px 20px;
+        background-color: var(--lighColor);
+    }
+    .sub-menu > ul > li{
+        padding: 5px 0px;
+        cursor: pointer;
+    }
+}
+
+.footer{
+    background-color: #eee;
+}
+.social-icon{
+    padding: 10px;
+}
+.social-icon > img{
+    height: 30px;
+    padding: 0px 3px;
+    cursor: pointer;
+}
+.context-footer{
+    display: flex;
+    align-items: center;
+    padding:10px;
+}
+.context-footer > div{
+    padding-right: 20px;
+}
+@media (max-width: 560px){
+    .context-footer{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .context-footer > div{
+        padding: 5px 0px;
+    }
+}
